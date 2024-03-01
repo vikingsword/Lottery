@@ -1,37 +1,37 @@
 package cn.itedus.lottery.test;
 
-import cn.itedus.lottery.IActivityBooth;
-import cn.itedus.lottery.req.ActivityReq;
-import cn.itedus.lottery.res.ActivityRes;
-import com.alibaba.fastjson.JSON;
-import org.apache.dubbo.config.annotation.Reference;
+import cn.itedus.lottery.infrastructure.dao.IActivityDao;
+import cn.itedus.lottery.infrastructure.po.Activity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-/**
- * 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
- * 公众号：bugstack虫洞栈
- * Create by 小傅哥(fustack)
- */
+import java.util.Date;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ApiTest {
 
-    private Logger logger = LoggerFactory.getLogger(ApiTest.class);
 
-    @Reference(interfaceClass = IActivityBooth.class, url = "dubbo://127.0.0.1:20880")
-    private IActivityBooth activityBooth;
+    @Autowired
+    private IActivityDao activityDao;
 
     @Test
-    public void test_rpc() {
-        ActivityReq req = new ActivityReq();
-        req.setActivityId(100001L);
-        ActivityRes result = activityBooth.queryActivityById(req);
-        logger.info("测试结果：{}", JSON.toJSONString(result));
+    public void test_insert() {
+        Activity activity = new Activity();
+        activity.setActivityId(100002L);
+        activity.setActivityName("测试活动");
+        activity.setActivityDesc("仅用于插入数据测试");
+        activity.setBeginDateTime(new Date());
+        activity.setEndDateTime(new Date());
+        activity.setStockCount(100);
+        activity.setTakeCount(10);
+        activity.setState(0);
+        activity.setCreator("vikingar");
+        activityDao.insert(activity);
     }
+
 
 }

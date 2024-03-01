@@ -2,7 +2,6 @@ package cn.itedus.lottery.res;
 
 import cn.itedus.lottery.Result;
 import cn.itedus.lottery.dto.ActivityDto;
-
 import java.io.Serializable;
 
 /**
@@ -13,10 +12,13 @@ import java.io.Serializable;
 public class ActivityRes implements Serializable {
 
     private Result result;
-
     private ActivityDto activity;
 
     public ActivityRes() {
+    }
+
+    public ActivityRes(Result result) {
+        this.result = result;
     }
 
     public ActivityRes(Result result, ActivityDto activity) {
@@ -39,4 +41,5 @@ public class ActivityRes implements Serializable {
     public void setActivity(ActivityDto activity) {
         this.activity = activity;
     }
+
 }

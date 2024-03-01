@@ -9,6 +9,7 @@ import java.util.Date;
  * @description
  */
 public class ActivityDto implements Serializable {
+
     // 活动ID
     private Long activityId;
 
@@ -96,5 +97,4 @@ public class ActivityDto implements Serializable {
     public void setState(Integer state) {
         this.state = state;
     }
-
 }
