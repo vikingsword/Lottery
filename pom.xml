@@ -16,6 +16,7 @@
         <module>lottery-interfaces</module>
         <module>lottery-rpc</module>
         <module>lottery-common</module>
+        <module>lottery-test</module>
     </modules>
 
     <properties>
