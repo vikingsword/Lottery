@@ -9,13 +9,14 @@ import java.io.Serializable;
  */
 public class ActivityReq implements Serializable {
 
-    private Integer activateIde;
+    private Long activityId;
 
-    public Integer getActivateIde() {
-        return activateIde;
+    public Long getActivityId() {
+        return activityId;
     }
 
-    public void setActivateIde(Integer activateIde) {
-        this.activateIde = activateIde;
+    public void setActivityId(Long activityId) {
+        this.activityId = activityId;
     }
+
 }

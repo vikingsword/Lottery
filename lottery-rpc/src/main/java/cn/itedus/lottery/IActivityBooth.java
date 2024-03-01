@@ -5,6 +5,6 @@ import cn.itedus.lottery.res.ActivityRes;
 
 public interface IActivityBooth {
 
-    ActivityRes queryActivityById(ActivityReq activityReq);
+    ActivityRes queryActivityById(ActivityReq req);
 
 }
