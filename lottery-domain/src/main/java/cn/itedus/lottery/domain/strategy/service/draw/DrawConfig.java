@@ -1,5 +1,6 @@
 package cn.itedus.lottery.domain.strategy.service.draw;
 
+import cn.itedus.lottery.Constants;
 import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
 
 import javax.annotation.PostConstruct;
@@ -15,17 +16,17 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DrawConfig {
 
     @Resource
-    private IDrawAlgorithm singleRateRandomDrawAlgorithm;
+    private IDrawAlgorithm entiretyRateRandomDrawAlgorithm;
 
     @Resource
-    private IDrawAlgorithm defaultRateRandomDrawAlgorithm;
+    private IDrawAlgorithm singleRateRandomDrawAlgorithm;
 
     protected static Map<Integer, IDrawAlgorithm> drawAlgorithmMap = new ConcurrentHashMap<>();
 
 
     @PostConstruct
     public void init() {
-        drawAlgorithmMap.put(1, defaultRateRandomDrawAlgorithm);
-        drawAlgorithmMap.put(2, singleRateRandomDrawAlgorithm);
+        drawAlgorithmMap.put(Constants.StrategyMode.ENTIRETY.getCode(), entiretyRateRandomDrawAlgorithm);
+        drawAlgorithmMap.put(Constants.StrategyMode.SINGLE.getCode(), singleRateRandomDrawAlgorithm);
     }
 }
