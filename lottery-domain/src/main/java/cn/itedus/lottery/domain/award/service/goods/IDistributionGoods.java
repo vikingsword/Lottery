@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.award.service;
+package cn.itedus.lottery.domain.award.service.goods;
 
 import cn.itedus.lottery.domain.award.model.req.GoodsReq;
 import cn.itedus.lottery.domain.award.model.res.DistributionRes;

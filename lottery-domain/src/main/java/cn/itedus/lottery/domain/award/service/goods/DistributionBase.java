@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.award.service;
+package cn.itedus.lottery.domain.award.service.goods;
 
 import cn.itedus.lottery.domain.award.repo.IAwardRepository;
 import org.slf4j.Logger;
