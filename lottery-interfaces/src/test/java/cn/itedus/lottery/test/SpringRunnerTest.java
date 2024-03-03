@@ -71,6 +71,7 @@ public class SpringRunnerTest {
 
         logger.info("测试结果：{}", JSON.toJSONString(distributionRes));
     }
+
     @Test
     public void test_insert() {
         Activity activity = new Activity();
