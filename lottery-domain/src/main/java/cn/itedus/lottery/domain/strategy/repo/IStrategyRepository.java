@@ -2,7 +2,7 @@ package cn.itedus.lottery.domain.strategy.repo;
 
 import cn.itedus.lottery.domain.strategy.model.aggregrates.StrategyRich;
 import cn.itedus.lottery.domain.strategy.model.vo.AwardBriefVO;
-import cn.itedus.lottery.infrastructure.po.Award;
+
 
 import java.util.List;
 

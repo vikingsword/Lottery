@@ -2,8 +2,7 @@ package cn.itedus.lottery.domain.strategy.model.aggregrates;
 
 import cn.itedus.lottery.domain.strategy.model.vo.StrategyBriefVO;
 import cn.itedus.lottery.domain.strategy.model.vo.StrategyDetailBriefVO;
-import cn.itedus.lottery.infrastructure.po.Strategy;
-import cn.itedus.lottery.infrastructure.po.StrategyDetail;
+
 
 import java.util.List;
 
