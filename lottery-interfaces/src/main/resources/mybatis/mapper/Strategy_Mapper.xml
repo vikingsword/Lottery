@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.itedus.lottery.infrastructure.dao.IStrategyDao">
 
-    <resultMap id="strategyMap" type="cn.itedus.common.infrastructure.po.Strategy">
+    <resultMap id="strategyMap" type="cn.itedus.lottery.infrastructure.po.Strategy">
         <id column="id" property="id"/>
         <result column="strategy_id" property="strategyId"/>
         <result column="strategy_desc" property="strategyDesc"/>
@@ -22,7 +22,7 @@
         WHERE strategy_id = #{strategyId}
     </select>
 
-    <insert id="insert" parameterType="cn.itedus.common.infrastructure.po.Strategy">
+    <insert id="insert" parameterType="cn.itedus.lottery.infrastructure.po.Strategy">
         INSERT INTO strategy(strategy_id, strategy_desc, strategy_mode, grant_type,
                              grant_date, ext_info, create_time, update_time)
         VALUES(#{strategyId}, #{strategyDesc}, #{strategyMode}, #{grantType},
