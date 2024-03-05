@@ -175,4 +175,12 @@ public class ActivityTest {
         logger.info("二次提审，测试：{}", JSON.toJSONString(stateHandler.checkPass(100001L, Constants.ActivityState.EDIT)));
     }
 
+    @Test
+    public void test_alterState2() {
+        logger.info("提交审核，测试：{}", JSON.toJSONString(stateHandler.arraignment(120981321L, Constants.ActivityState.EDIT)));
+        logger.info("审核通过，测试：{}", JSON.toJSONString(stateHandler.checkPass(120981321L, Constants.ActivityState.ARRAIGNMENT)));
+        logger.info("运行活动，测试：{}", JSON.toJSONString(stateHandler.doing(120981321L, Constants.ActivityState.PASS)));
+        logger.info("二次提审，测试：{}", JSON.toJSONString(stateHandler.checkPass(120981321L, Constants.ActivityState.EDIT)));
+    }
+
 }

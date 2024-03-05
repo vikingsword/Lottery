@@ -12,13 +12,6 @@
         <result column="update_time" property="updateTime"/>
     </resultMap>
 
-    <select id="queryAwardInfo" parameterType="java.lang.String" resultMap="awardMap">
-        SELECT
-        id, award_id, award_type, award_name, award_content
-        FROM award
-        WHERE award_id = #{awardId}
-    </select>
-
     <insert id="insertList" parameterType="java.util.List">
         INSERT INTO award(award_id, award_type, award_name, award_content, create_time, update_time)
         VALUES
@@ -33,5 +26,12 @@
             )
         </foreach>
     </insert>
+
+    <select id="queryAwardInfo" parameterType="java.lang.String" resultMap="awardMap">
+        SELECT
+            id, award_id, award_type, award_name, award_content
+        FROM award
+        WHERE award_id = #{awardId}
+    </select>
 
 </mapper>
