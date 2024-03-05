@@ -15,7 +15,7 @@ public class ArraignmentState extends AbstractState {
 
     @Override
     public Result arraignment(Long activityId, Enum<Constants.ActivityState> currentState) {
-        return Result.buildResult(Constants.ResponseCode.UN_ERROR.getCode(), "待审核状态不能提审");
+        return Result.buildResult(Constants.ResponseCode.UN_ERROR, "待审核状态不能提审");
     }
 
     @Override
