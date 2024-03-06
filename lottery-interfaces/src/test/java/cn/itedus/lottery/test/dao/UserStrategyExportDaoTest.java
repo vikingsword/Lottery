@@ -1,6 +1,6 @@
 package cn.itedus.lottery.test.dao;
 
-import cn.itedus.lottery.common.Constants;
+import cn.itedus.common.Constants;
 import cn.itedus.lottery.domain.support.ids.IIdGenerator;
 import cn.itedus.lottery.infrastructure.dao.IUserStrategyExportDao;
 import cn.itedus.lottery.infrastructure.po.UserStrategyExport;

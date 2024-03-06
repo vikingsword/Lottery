@@ -1,6 +1,6 @@
 package cn.itedus.lottery.test.domain;
 
-import cn.itedus.lottery.common.Constants;
+import cn.itedus.common.Constants;
 import cn.itedus.lottery.domain.support.ids.IIdGenerator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
