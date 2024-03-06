@@ -14,11 +14,19 @@ import org.apache.ibatis.annotations.Mapper;
 @DBRouterStrategy(splitTable = true)
 public interface IUserStrategyExportDao {
 
-    @DBRouter(key = "uid")
+    /**
+     * 新增数据
+     * @param userStrategyExport 用户策略
+     */
+    @DBRouter(key = "uId")
     void insert(UserStrategyExport userStrategyExport);
 
-
+    /**
+     * 查询数据
+     * @param uId 用户ID
+     * @return 用户策略
+     */
     @DBRouter
-    UserStrategyExport queryUserStrategyExportByUId(String uid);
+    UserStrategyExport queryUserStrategyExportByUId(String uId);
 
 }
