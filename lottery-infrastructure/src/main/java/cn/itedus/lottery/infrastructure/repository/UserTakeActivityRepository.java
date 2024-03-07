@@ -1,8 +1,13 @@
 package cn.itedus.lottery.infrastructure.repository;
 
 import cn.itedus.lottery.domain.activity.repo.IUserTakeActivityRepository;
-import org.springframework.stereotype.Service;
+import cn.itedus.lottery.infrastructure.dao.IUserTakeActivityCountDao;
+import cn.itedus.lottery.infrastructure.dao.IUserTakeActivityDao;
+import cn.itedus.lottery.infrastructure.po.UserTakeActivity;
+import cn.itedus.lottery.infrastructure.po.UserTakeActivityCount;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Date;
 
 /**
@@ -10,17 +15,51 @@ import java.util.Date;
  * @time 2024/3/7 12:53
  * @description
  */
-@Service
+@Component
 public class UserTakeActivityRepository implements IUserTakeActivityRepository {
 
 
-    @Override
-    public void takeActivity(Long activityId, String activityName, Integer takeCount, Integer userTakeLeftCount, String uId, Date takeDate, Long takeId) {
+    @Resource
+    private IUserTakeActivityCountDao userTakeActivityCountDao;
 
-    }
+    @Resource
+    private IUserTakeActivityDao userTakeActivityDao;
+
 
     @Override
     public int subtractionLeftCount(Long activityId, String activityName, Integer takeCount, Integer userTakeLeftCount, String uId, Date partakeDate) {
-        return 0;
+        if (null == userTakeLeftCount) {
+            UserTakeActivityCount userTakeActivityCount = new UserTakeActivityCount();
+            userTakeActivityCount.setuId(uId);
+            userTakeActivityCount.setActivityId(activityId);
+            userTakeActivityCount.setTotalCount(takeCount);
+            userTakeActivityCount.setLeftCount(takeCount - 1);
+            userTakeActivityCountDao.insert(userTakeActivityCount);
+            return 1;
+        } else {
+            UserTakeActivityCount userTakeActivityCount = new UserTakeActivityCount();
+            userTakeActivityCount.setuId(uId);
+            userTakeActivityCount.setActivityId(activityId);
+            return userTakeActivityCountDao.updateLeftCount(userTakeActivityCount);
+        }
+    }
+
+    @Override
+    public void takeActivity(Long activityId, String activityName, Integer takeCount, Integer userTakeLeftCount, String uId, Date takeDate, Long takeId) {
+        UserTakeActivity userTakeActivity = new UserTakeActivity();
+        userTakeActivity.setuId(uId);
+        userTakeActivity.setTakeId(takeId);
+        userTakeActivity.setActivityId(activityId);
+        userTakeActivity.setActivityName(activityName);
+        userTakeActivity.setTakeDate(takeDate);
+        if (null == userTakeLeftCount) {
+            userTakeActivity.setTakeCount(1);
+        } else {
+            userTakeActivity.setTakeCount(takeCount - userTakeLeftCount);
+        }
+        String uuid = uId + "_" + activityId + "_" + userTakeActivity.getTakeCount();
+        userTakeActivity.setUuid(uuid);
+
+        userTakeActivityDao.insert(userTakeActivity);
     }
 }
