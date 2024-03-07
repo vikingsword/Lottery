@@ -1,7 +1,7 @@
 package cn.itedus.lottery.interfaces;
 
 import cn.itedus.lottery.IActivityBooth;
-import cn.itedus.common.Result;
+import cn.itedus.lottery.common.Result;
 import cn.itedus.lottery.dto.ActivityDto;
 import cn.itedus.lottery.infrastructure.dao.IActivityDao;
 import cn.itedus.lottery.infrastructure.po.Activity;

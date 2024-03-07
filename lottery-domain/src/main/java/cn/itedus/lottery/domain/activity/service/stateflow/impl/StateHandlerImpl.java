@@ -1,7 +1,7 @@
 package cn.itedus.lottery.domain.activity.service.stateflow.impl;
 
-import cn.itedus.common.Constants;
-import cn.itedus.common.Result;
+import cn.itedus.lottery.common.Constants;
+import cn.itedus.lottery.common.Result;
 import cn.itedus.lottery.domain.activity.service.stateflow.IStateHandler;
 import cn.itedus.lottery.domain.activity.service.stateflow.StateConfig;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package cn.itedus.lottery.domain.activity.repo;
 
-import cn.itedus.common.Constants;
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.activity.model.vo.ActivityVO;
 import cn.itedus.lottery.domain.activity.model.vo.AwardVO;
 import cn.itedus.lottery.domain.activity.model.vo.StrategyDetailVO;

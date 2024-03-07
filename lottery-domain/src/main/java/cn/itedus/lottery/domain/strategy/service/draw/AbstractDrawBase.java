@@ -1,6 +1,6 @@
 package cn.itedus.lottery.domain.strategy.service.draw;
 
-import cn.itedus.common.Constants;
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.strategy.model.aggregrates.StrategyRich;
 import cn.itedus.lottery.domain.strategy.model.req.DrawReq;
 import cn.itedus.lottery.domain.strategy.model.res.DrawResult;

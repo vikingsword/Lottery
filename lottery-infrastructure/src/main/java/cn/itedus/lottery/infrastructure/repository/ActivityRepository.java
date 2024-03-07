@@ -1,6 +1,6 @@
 package cn.itedus.lottery.infrastructure.repository;
 
-import cn.itedus.common.Constants;
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.activity.model.vo.*;
 import cn.itedus.lottery.domain.activity.repo.IActivityRepository;
 import cn.itedus.lottery.infrastructure.dao.IActivityDao;

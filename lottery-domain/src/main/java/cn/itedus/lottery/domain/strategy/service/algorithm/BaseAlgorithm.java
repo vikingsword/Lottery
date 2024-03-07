@@ -1,6 +1,6 @@
 package cn.itedus.lottery.domain.strategy.service.algorithm;
 
-import cn.itedus.common.Constants;
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.strategy.model.vo.AwardRateInfo;
 
 import java.math.BigDecimal;

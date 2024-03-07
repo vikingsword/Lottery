@@ -1,7 +1,7 @@
 package cn.itedus.lottery.domain.activity.service.stateflow;
 
-import cn.itedus.common.Constants;
-import cn.itedus.common.Result;
+import cn.itedus.lottery.common.Constants;
+import cn.itedus.lottery.common.Result;
 
 public interface IStateHandler {
 

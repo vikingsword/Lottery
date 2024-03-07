@@ -1,6 +1,6 @@
 package cn.itedus.lottery.domain.strategy.model.res;
 
-import cn.itedus.common.Constants;
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.strategy.model.vo.DrawAwardInfo;
 
 /**

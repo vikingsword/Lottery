@@ -1,6 +1,6 @@
 package cn.itedus.lottery.domain.support.ids;
 
-import cn.itedus.common.Constants;
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.support.ids.policy.RandomNumeric;
 import cn.itedus.lottery.domain.support.ids.policy.ShortCode;
 import cn.itedus.lottery.domain.support.ids.policy.SnowFlake;
