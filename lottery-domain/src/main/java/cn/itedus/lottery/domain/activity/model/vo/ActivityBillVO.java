@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * @author vikingar
  * @time 2024/3/7 11:48
- * @description
+ * @description 活动账单【库存、状态、日期、个人参与次数】
  */
 public class ActivityBillVO {
 

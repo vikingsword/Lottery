@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.strategy.model.aggregrates;
+package cn.itedus.lottery.domain.strategy.model.aggregates;
 
 import cn.itedus.lottery.domain.strategy.model.vo.StrategyBriefVO;
 import cn.itedus.lottery.domain.strategy.model.vo.StrategyDetailBriefVO;
