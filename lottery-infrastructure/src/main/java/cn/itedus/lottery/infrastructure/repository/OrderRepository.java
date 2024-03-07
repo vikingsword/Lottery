@@ -1,6 +1,6 @@
 package cn.itedus.lottery.infrastructure.repository;
 
-import cn.itedus.lottery.domain.award.repo.IAwardRepository;
+import cn.itedus.lottery.domain.award.repo.IOrderRepository;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
  * @description
  */
 @Component
-public class AwardRepository implements IAwardRepository {
+public class OrderRepository implements IOrderRepository {
 
 }
