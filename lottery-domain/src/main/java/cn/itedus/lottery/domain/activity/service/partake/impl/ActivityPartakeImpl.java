@@ -22,12 +22,12 @@ import java.util.Map;
 /**
  * @author vikingar
  * @time 2024/3/7 12:36
- * @description
+ * @description 活动参与功能实现
  */
 @Service
 public class ActivityPartakeImpl extends BaseActivityPartake {
 
-    Logger logger = LoggerFactory.getLogger(ActivityPartakeImpl.class);
+    private Logger logger = LoggerFactory.getLogger(ActivityPartakeImpl.class);
 
     @Resource
     private IUserTakeActivityRepository userTakeActivityRepository;
@@ -58,6 +58,7 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
         // 校验：活动库存
         if (bill.getStockSurplusCount() <= 0) {
             logger.warn("活动剩余库存非可用 stockSurplusCount：{}", bill.getStockSurplusCount());
+            return Result.buildResult(Constants.ResponseCode.UN_ERROR, "活动剩余库存非可用");
         }
 
         // 校验：个人库存 - 个人活动剩余可领取次数
@@ -107,4 +108,5 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
             dbRouter.clear();
         }
     }
+
 }
