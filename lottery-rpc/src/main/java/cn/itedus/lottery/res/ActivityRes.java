@@ -1,6 +1,6 @@
 package cn.itedus.lottery.res;
 
-import cn.itedus.common.Result;
+import cn.itedus.lottery.common.Result;
 import cn.itedus.lottery.dto.ActivityDto;
 import java.io.Serializable;
 

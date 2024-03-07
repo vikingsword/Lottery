@@ -1,6 +1,6 @@
 package cn.itedus.lottery.domain.award.service.goods.impl;
 
-import cn.itedus.common.Constants;
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.award.model.req.GoodsReq;
 import cn.itedus.lottery.domain.award.model.res.DistributionRes;
 import cn.itedus.lottery.domain.award.service.goods.DistributionBase;

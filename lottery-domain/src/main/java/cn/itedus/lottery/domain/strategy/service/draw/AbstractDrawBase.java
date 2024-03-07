@@ -1,7 +1,7 @@
 package cn.itedus.lottery.domain.strategy.service.draw;
 
-import cn.itedus.common.Constants;
-import cn.itedus.lottery.domain.strategy.model.aggregrates.StrategyRich;
+import cn.itedus.lottery.common.Constants;
+import cn.itedus.lottery.domain.strategy.model.aggregates.StrategyRich;
 import cn.itedus.lottery.domain.strategy.model.req.DrawReq;
 import cn.itedus.lottery.domain.strategy.model.res.DrawResult;
 import cn.itedus.lottery.domain.strategy.model.vo.*;
@@ -67,15 +67,11 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
      */
     private void checkAndInitRateData(Long strategyId, Integer strategyMode, List<StrategyDetailBriefVO> strategyDetailList) {
 
-        // 非单项概率，不必存入缓存
-        if (!Constants.StrategyMode.SINGLE.getCode().equals(strategyMode)) {
-            return;
-        }
-
+        // 根据抽奖策略模式，获取对应的抽奖服务
         IDrawAlgorithm drawAlgorithm = drawAlgorithmGroup.get(strategyMode);
 
-        // 已初始化过的数据，不必重复初始化
-        if (drawAlgorithm.isExistRateTuple(strategyId)) {
+        // 判断已处理过的的数据
+        if (drawAlgorithm.isExist(strategyId)) {
             return;
         }
 
@@ -85,7 +81,7 @@ public abstract class AbstractDrawBase extends DrawStrategySupport implements ID
             awardRateInfoList.add(new AwardRateInfo(strategyDetail.getAwardId(), strategyDetail.getAwardRate()));
         }
 
-        drawAlgorithm.initRateTuple(strategyId, awardRateInfoList);
+        drawAlgorithm.initRateTuple(strategyId, strategyMode, awardRateInfoList);
 
     }
 

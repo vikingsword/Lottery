@@ -1,6 +1,6 @@
 package cn.itedus.lottery.domain.strategy.repo;
 
-import cn.itedus.lottery.domain.strategy.model.aggregrates.StrategyRich;
+import cn.itedus.lottery.domain.strategy.model.aggregates.StrategyRich;
 import cn.itedus.lottery.domain.strategy.model.vo.AwardBriefVO;
 
 

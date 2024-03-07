@@ -1,7 +1,7 @@
 package cn.itedus.lottery.domain.activity.service.stateflow.event;
 
-import cn.itedus.common.Constants;
-import cn.itedus.common.Result;
+import cn.itedus.lottery.common.Constants;
+import cn.itedus.lottery.common.Result;
 import cn.itedus.lottery.domain.activity.service.stateflow.AbstractState;
 import org.springframework.stereotype.Component;
 
@@ -38,8 +38,7 @@ public class ArraignmentState extends AbstractState {
 
     @Override
     public Result close(Long activityId, Enum<Constants.ActivityState> currentState) {
-        boolean isSuccess = activityRepository.alterStatus(activityId, currentState, Constants.ActivityState.CLOSE);
-        return isSuccess ? Result.buildResult(Constants.ResponseCode.SUCCESS, "活动审核关闭完成") : Result.buildErrorResult("活动状态变更失败");
+        return Result.buildResult(Constants.ResponseCode.UN_ERROR, "非拒绝活动不可关闭");
     }
 
     @Override
