@@ -1,5 +1,7 @@
 package cn.itedus.lottery.domain.rule.model.req;
 
+import java.util.Map;
+
 /**
  * @author vikingar
  * @time 2024/3/8 14:43
