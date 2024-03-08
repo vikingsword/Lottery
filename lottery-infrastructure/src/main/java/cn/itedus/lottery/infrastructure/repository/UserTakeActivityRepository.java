@@ -11,6 +11,7 @@ import cn.itedus.lottery.infrastructure.po.UserStrategyExport;
 import cn.itedus.lottery.infrastructure.po.UserTakeActivity;
 import cn.itedus.lottery.infrastructure.po.UserTakeActivityCount;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -20,7 +21,7 @@ import java.util.Date;
  * @time 2024/3/7 12:53
  * @description 用户参与活动仓储
  */
-@Component
+@Repository
 public class UserTakeActivityRepository implements IUserTakeActivityRepository {
 
 
