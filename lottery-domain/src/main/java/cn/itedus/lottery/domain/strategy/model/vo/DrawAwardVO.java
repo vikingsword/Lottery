@@ -7,7 +7,7 @@ import java.util.Date;
  * @time 2024/3/2 17:20
  * @description
  */
-public class DrawAwardInfo {
+public class DrawAwardVO {
 
     /**
      * 奖品ID
@@ -43,10 +43,10 @@ public class DrawAwardInfo {
      */
     private Date grantDate;
 
-    public DrawAwardInfo() {
+    public DrawAwardVO() {
     }
 
-    public DrawAwardInfo(String awardId, Integer awardType, String awardName,String awardContent) {
+    public DrawAwardVO(String awardId, Integer awardType, String awardName, String awardContent) {
         this.awardId = awardId;
         this.awardType = awardType;
         this.awardName = awardName;
@@ -107,5 +107,18 @@ public class DrawAwardInfo {
 
     public void setGrantDate(Date grantDate) {
         this.grantDate = grantDate;
+    }
+
+    @Override
+    public String toString() {
+        return "DrawAwardVO{" +
+                "awardId='" + awardId + '\'' +
+                ", awardType=" + awardType +
+                ", awardName='" + awardName + '\'' +
+                ", awardContent='" + awardContent + '\'' +
+                ", strategyMode=" + strategyMode +
+                ", grantType=" + grantType +
+                ", grantDate=" + grantDate +
+                '}';
     }
 }
