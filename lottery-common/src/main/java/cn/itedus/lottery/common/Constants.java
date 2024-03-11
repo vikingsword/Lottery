@@ -13,7 +13,8 @@ public class Constants {
         ILLEGAL_PARAMETER("0002", "非法参数"),
         INDEX_DUP("0003", "主键冲突"),
         NO_UPDATE("0004", "SQL操作无更新"),
-        LOSING_DRAW("D001", "未中奖");
+        LOSING_DRAW("D001", "未中奖"),
+        RULE_ERR("D002", "量化人群规则执行失败");
 
         private String code;
         private String info;
@@ -44,7 +45,7 @@ public class Constants {
     /**
      * 决策树节点
      */
-    public static final class NodeType {
+    public static final class NodeType{
         /** 树茎 */
         public static final Integer STEM = 1;
         /** 果实 */
