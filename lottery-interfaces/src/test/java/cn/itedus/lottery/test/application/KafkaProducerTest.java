@@ -1,6 +1,8 @@
 package cn.itedus.lottery.test.application;
 
-import cn.itedus.lottery.application.mq.KafkaProducer;
+import cn.itedus.lottery.application.mq.producer.KafkaProducer;
+import cn.itedus.lottery.common.Constants;
+import cn.itedus.lottery.domain.activity.model.vo.InvoiceVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -10,11 +12,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
-
 /**
- * @author vikingar
- * @time 2024/3/12 9:02
- * @description
+ * @description: Kafka 消息测试
+ * @author: 小傅哥，微信：fustack
+ * @date: 2021/10/23
+ * @github: https://github.com/fuzhengwei
+ * @Copyright: 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -27,10 +30,21 @@ public class KafkaProducerTest {
 
     @Test
     public void test_send() throws InterruptedException {
-        // 循环发送消息
-        for (int i = 1; i < 100; i++) {
-            kafkaProducer.send("hello lottery " + i);
-            Thread.sleep(2000);
+
+        InvoiceVO invoice = new InvoiceVO();
+        invoice.setuId("fustack");
+        invoice.setOrderId(1444540456057864192L);
+        invoice.setAwardId("3");
+        invoice.setAwardType(Constants.AwardType.DESC.getCode());
+        invoice.setAwardName("Code");
+        invoice.setAwardContent("苹果电脑");
+        invoice.setShippingAddress(null);
+        invoice.setExtInfo(null);
+
+        kafkaProducer.sendLotteryInvoice(invoice);
+
+        while (true){
+            Thread.sleep(10000);
         }
     }
 }
