@@ -4,10 +4,8 @@ import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.common.Result;
 import cn.itedus.lottery.domain.activity.model.req.PartakeReq;
-import cn.itedus.lottery.domain.activity.model.vo.ActivityBillVO;
-import cn.itedus.lottery.domain.activity.model.vo.DrawOrderVO;
-import cn.itedus.lottery.domain.activity.model.vo.InvoiceVO;
-import cn.itedus.lottery.domain.activity.model.vo.UserTakeActivityVO;
+import cn.itedus.lottery.domain.activity.model.res.StockResult;
+import cn.itedus.lottery.domain.activity.model.vo.*;
 import cn.itedus.lottery.domain.activity.repo.IUserTakeActivityRepository;
 import cn.itedus.lottery.domain.activity.service.partake.BaseActivityPartake;
 import org.slf4j.Logger;
@@ -80,6 +78,16 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
             return Result.buildResult(Constants.ResponseCode.NO_UPDATE);
         }
         return Result.buildSuccessResult();
+    }
+
+    @Override
+    protected StockResult subtractionActivityStockByRedis(String uId, Long activityId, Integer stockCount) {
+        return activityRepository.subtractionActivityStockByRedis(uId, activityId, stockCount);
+    }
+
+    @Override
+    protected void recoverActivityCacheStockByRedis(Long activityId, String tokenKey, String code) {
+        activityRepository.recoverActivityCacheStockByRedis(activityId, tokenKey, code);
     }
 
     @Override
@@ -156,6 +164,11 @@ public class ActivityPartakeImpl extends BaseActivityPartake {
         } finally {
             dbRouter.clear();
         }
+    }
+
+    @Override
+    public void updateActivityStock(ActivityPartakeRecordVO activityPartakeRecordVO) {
+        userTakeActivityRepository.updateActivityStock(activityPartakeRecordVO);
     }
 
 }

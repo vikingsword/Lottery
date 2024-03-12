@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * @author vikingar
  * @time 2024/3/1 13:47
- * @description
+ * @description 活动基础信息表DAO
  */
 @Mapper
 public interface IActivityDao {
@@ -53,4 +53,10 @@ public interface IActivityDao {
      */
     List<Activity> scanToDoActivityList(Long id);
 
+    /**
+     * 更新用户领取活动后，活动库存
+     *
+     * @param activity  入参
+     */
+    void updateActivityStock(Activity activity);
 }
