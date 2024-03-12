@@ -5,6 +5,8 @@ import cn.bugstack.middleware.db.router.annotation.DBRouterStrategy;
 import cn.itedus.lottery.infrastructure.po.UserStrategyExport;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @author vikingar
  * @time 2024/3/6 20:16
@@ -42,4 +44,12 @@ public interface IUserStrategyExportDao {
      */
     @DBRouter
     void updateInvoiceMqState(UserStrategyExport userStrategyExport);
+
+    /**
+     * 扫描发货单 MQ 状态，把未发送 MQ 的单子扫描出来，做补偿
+     *
+     * @return 发货单
+     */
+    List<UserStrategyExport> scanInvoiceMqState();
+
 }
