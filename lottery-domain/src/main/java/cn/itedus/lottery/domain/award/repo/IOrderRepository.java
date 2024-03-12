@@ -1,5 +1,15 @@
 package cn.itedus.lottery.domain.award.repo;
 
 public interface IOrderRepository {
-    // TODO 对分库分表中的用户中奖纪录操作
+
+    /**
+     * 更新奖品发放状态
+     *
+     * @param uId               用户ID
+     * @param orderId           订单ID
+     * @param awardId           奖品ID
+     * @param grantState        奖品状态
+     */
+    void updateUserAwardState(String uId, Long orderId, String awardId, Integer grantState);
+
 }
