@@ -1,14 +1,11 @@
 package cn.itedus.lottery.domain.strategy.service.algorithm;
 
 import cn.itedus.lottery.domain.strategy.model.vo.AwardRateInfo;
-import com.sun.org.apache.xerces.internal.util.EntityResolverWrapper;
-import com.sun.xml.internal.ws.util.ReadAllStream;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * @author vikingar
